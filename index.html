@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VisAlgo — Sorting Visualizer</title>
+  <link rel="stylesheet" href="landing.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Vis<span>Algo</span></div>
+    <div class="nav-links">
+      <a href="#algorithms">Algorithms</a>
+      <a href="#about">About</a>
+      <a href="visualizer.html" class="nav-cta">Launch App →</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <canvas id="hero-canvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Interactive Learning Tool</p>
+      <h1 class="hero-title">See how<br/><em>sorting works.</em></h1>
+      <p class="hero-desc">Watch algorithms come alive. Compare how Bubble, Merge, Quick, Heap and more rearrange data — step by step, bar by bar.</p>
+      <div class="hero-actions">
+        <a href="visualizer.html" class="btn-main">Start Visualizing</a>
+        <a href="#algorithms" class="btn-ghost">Explore Algorithms ↓</a>
+      </div>
+    </div>
+    <div class="hero-preview">
+      <div class="mini-bars" id="mini-bars"></div>
+      <p class="preview-label">Live preview — Bubble Sort</p>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat"><span>6</span>Algorithms</div>
+    <div class="stat-div"></div>
+    <div class="stat"><span>Real-time</span>Visualization</div>
+    <div class="stat-div"></div>
+    <div class="stat"><span>120</span>Max Array Size</div>
+    <div class="stat-div"></div>
+    <div class="stat"><span>5</span>Speed Levels</div>
+  </div>
+
+  <!-- ALGORITHMS GRID -->
+  <section class="algorithms" id="algorithms">
+    <div class="section-header">
+      <p class="section-eyebrow">The Collection</p>
+      <h2>Six algorithms.<br/>One visualizer.</h2>
+    </div>
+
+    <div class="algo-grid">
+
+      <a href="visualizer.html?algo=bubble" class="algo-card" data-algo="bubble">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-bubble"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag">O(n²)</div>
+          <h3>Bubble Sort</h3>
+          <p>Adjacent swaps, rising maximums. Simple. Slow. A classic first algorithm.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+      <a href="visualizer.html?algo=selection" class="algo-card" data-algo="selection">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-selection"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag">O(n²)</div>
+          <h3>Selection Sort</h3>
+          <p>Find the minimum, place it. Repeat. Minimizes writes, ignores speed.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+      <a href="visualizer.html?algo=insertion" class="algo-card" data-algo="insertion">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-insertion"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag">O(n²)</div>
+          <h3>Insertion Sort</h3>
+          <p>Build it sorted, one card at a time. Excellent on nearly-sorted data.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+      <a href="visualizer.html?algo=merge" class="algo-card featured" data-algo="merge">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-merge"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag featured-tag">O(n log n)</div>
+          <h3>Merge Sort</h3>
+          <p>Divide, conquer, merge. Guaranteed performance, stable, elegant.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+      <a href="visualizer.html?algo=quick" class="algo-card featured" data-algo="quick">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-quick"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag featured-tag">O(n log n)</div>
+          <h3>Quick Sort</h3>
+          <p>Pivot. Partition. Recurse. The fastest in practice — on most data.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+      <a href="visualizer.html?algo=heap" class="algo-card featured" data-algo="heap">
+        <div class="algo-card-art">
+          <div class="art-bars" id="art-heap"></div>
+        </div>
+        <div class="algo-card-body">
+          <div class="algo-tag featured-tag">O(n log n)</div>
+          <h3>Heap Sort</h3>
+          <p>Build a max-heap. Extract repeatedly. In-place and guaranteed fast.</p>
+          <span class="algo-link">Visualize →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-eyebrow">About VisAlgo</p>
+      <h2>Built for learners,<br/>not textbooks.</h2>
+      <p>Sorting algorithms are often taught through dry pseudocode and static diagrams. VisAlgo was made to fix that — give you a live, interactive way to actually see what's happening inside each algorithm as it runs.</p>
+      <p>Adjust the array size. Change the speed. Hit Stop mid-sort. Understand the complexity. Then try the next one.</p>
+      <a href="visualizer.html" class="btn-main">Open Visualizer →</a>
+    </div>
+    <div class="about-comparison">
+      <div class="compare-card">
+        <div class="compare-label">Best for small data</div>
+        <div class="compare-algo">Insertion Sort</div>
+        <div class="compare-bars">
+          <div class="cb" style="height:30%"></div>
+          <div class="cb" style="height:55%"></div>
+          <div class="cb" style="height:45%"></div>
+          <div class="cb" style="height:80%"></div>
+          <div class="cb" style="height:20%"></div>
+          <div class="cb" style="height:65%"></div>
+          <div class="cb" style="height:40%"></div>
+          <div class="cb" style="height:90%"></div>
+        </div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-label">Best overall</div>
+        <div class="compare-algo">Quick Sort</div>
+        <div class="compare-bars">
+          <div class="cb s" style="height:20%"></div>
+          <div class="cb s" style="height:30%"></div>
+          <div class="cb s" style="height:45%"></div>
+          <div class="cb s" style="height:55%"></div>
+          <div class="cb s" style="height:65%"></div>
+          <div class="cb s" style="height:75%"></div>
+          <div class="cb s" style="height:85%"></div>
+          <div class="cb s" style="height:90%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">Vis<span>Algo</span></div>
+    <p>A sorting algorithm visualizer. Made for learning.</p>
+    <a href="visualizer.html" class="btn-ghost">Launch App →</a>
+  </footer>
+
+  <script src="landing.js"></script>
+</body>
+</html>

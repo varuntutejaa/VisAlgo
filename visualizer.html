@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VisAlgo — Visualizer</title>
+  <link rel="stylesheet" href="visualizer.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Vis<span>Algo</span></a>
+    <div class="nav-center" id="nav-algo-name">Bubble Sort</div>
+    <a href="index.html" class="nav-back">← All Algorithms</a>
+  </nav>
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Algorithm</div>
+        <div class="algo-tabs" id="algo-tabs">
+          <button class="algo-tab active" data-algo="bubble">Bubble</button>
+          <button class="algo-tab" data-algo="selection">Selection</button>
+          <button class="algo-tab" data-algo="insertion">Insertion</button>
+          <button class="algo-tab" data-algo="merge">Merge</button>
+          <button class="algo-tab" data-algo="quick">Quick</button>
+          <button class="algo-tab" data-algo="heap">Heap</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Array Size — <span id="size-label">40</span></div>
+        <input type="range" id="size-slider" min="10" max="120" value="40" class="slider"/>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Speed — <span id="speed-label">Medium</span></div>
+        <input type="range" id="speed-slider" min="1" max="5" value="3" class="slider"/>
+      </div>
+
+      <div class="sidebar-section sidebar-actions">
+        <button id="btn-generate" class="sb-btn">New Array</button>
+        <button id="btn-sort" class="sb-btn primary">▶ Sort</button>
+        <button id="btn-stop" class="sb-btn danger" disabled>■ Stop</button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Legend</div>
+        <div class="legend">
+          <div class="legend-item"><div class="ldot default"></div> Unsorted</div>
+          <div class="legend-item"><div class="ldot comparing"></div> Comparing</div>
+          <div class="legend-item"><div class="ldot swapping"></div> Swapping</div>
+          <div class="legend-item"><div class="ldot sorted"></div> Sorted</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="algo-cover" id="algo-cover">
+        <div class="cover-left">
+          <div class="cover-tag" id="cover-tag">O(n²)</div>
+          <h1 class="cover-title" id="cover-title">Bubble Sort</h1>
+          <p class="cover-desc" id="cover-desc">Repeatedly compares adjacent elements and swaps them if they're out of order. The largest elements bubble to the top each pass.</p>
+        </div>
+        <div class="cover-badges" id="cover-badges">
+          <div class="badge"><div class="badge-val" id="badge-best">O(n)</div><div class="badge-lbl">Best</div></div>
+          <div class="badge"><div class="badge-val" id="badge-avg">O(n²)</div><div class="badge-lbl">Average</div></div>
+          <div class="badge"><div class="badge-val" id="badge-worst">O(n²)</div><div class="badge-lbl">Worst</div></div>
+          <div class="badge"><div class="badge-val" id="badge-space">O(1)</div><div class="badge-lbl">Space</div></div>
+          <div class="badge stable-badge"><div class="badge-val" id="badge-stable">Stable</div><div class="badge-lbl">Stability</div></div>
+        </div>
+      </div>
+
+      <div class="viz-card">
+        <div id="bar-container"></div>
+      </div>
+
+      <div class="info-panel" id="info-panel">
+        <div class="info-col">
+          <h3>How it works</h3>
+          <p id="info-howto"></p>
+        </div>
+        <div class="info-col">
+          <h3>When to use it</h3>
+          <p id="info-when"></p>
+        </div>
+        <div class="info-col">
+          <h3>Key property</h3>
+          <p id="info-prop"></p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="visualizer.js"></script>
+</body>
+</html>
